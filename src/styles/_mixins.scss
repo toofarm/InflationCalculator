@@ -1,0 +1,11 @@
+@import "./constants";
+
+@mixin inlineLink() {
+  font-size: inherit;
+  color: $color-link;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
