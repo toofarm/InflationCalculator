@@ -9,8 +9,8 @@
 
     let val = 0;
     let selection:number;
-    const years = makeYearslist();
     let result;
+    const years = makeYearslist();
 
     $: valid = selection && val > 0;
 
@@ -22,13 +22,14 @@
             amount: val,
             comparisonYear: selection
         })
-        
+
         loading.set(false)
-    }
+
+    };
 
     const handleOnChange = (e) => {
         val = Number((e.target as HTMLInputElement).value)
-    }
+    };
 </script>
 
 <div class='hold'>

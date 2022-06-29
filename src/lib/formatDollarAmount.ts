@@ -19,8 +19,7 @@ const formatDollarAmount = (num: number): string => {
     res.push(arr[count]);
     count -= 1;
   }
-  const r = `$${res.reverse().join("")}.${trailing}`;
-  return r;
+  return `$${res.reverse().join("")}.${trailing}`;
 };
 
 export default formatDollarAmount;

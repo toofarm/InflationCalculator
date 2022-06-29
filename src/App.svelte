@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { loading } from './stores/loading';
   import FormHold from './components/FormHold.svelte';
   import Footer from './components/Footer.svelte';
@@ -12,6 +12,7 @@
   {/if}
 
   <h1>Inflation Calculator</h1>
+  
   <p>
     Enter an amount in contemporary US dollars, then pick a year for comparison 
   </p>
@@ -48,15 +49,15 @@
   }
 
   p {
-    max-width: 14rem;
+    max-width: none;
     margin: 1rem auto;
     line-height: 1.35;
     font-size: 1.2rem;
   }
 
-  @media (min-width: 480px) {
+  @media (max-width: $tablet) {
     h1 {
-      max-width: none;
+      font-size: 3rem;
     }
 
     p {

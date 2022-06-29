@@ -1,6 +1,7 @@
 <script lang="ts">
     import formatDollarAmount from "../lib/formatDollarAmount";
 
+    // Props
     export let singleUnit:number;
     export let total:number;
     export let date:number;
