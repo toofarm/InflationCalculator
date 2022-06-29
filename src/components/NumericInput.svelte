@@ -22,6 +22,10 @@
             margin: 1rem 0 0 0;
             padding: 0.5rem;
             font-size: 1.15rem;
+            border-left: none;
+            border-top: none;
+            border-right: none;
+            border-bottom: 1px solid black;
         }
     }
 

@@ -11,6 +11,7 @@
 
     footer {
         font-size: 1rem;
+        color: #888;
     }
 
     a {

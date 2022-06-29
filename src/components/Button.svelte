@@ -15,7 +15,7 @@ export let handler:any;
         color: white;
         font-size: 1.45rem;
         font-weight: bold;
-        padding: 0.5em 1em;
+        padding: 0.35em 1em;
         border: none;
         border-radius: 8px;
 

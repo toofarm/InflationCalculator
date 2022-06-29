@@ -1,12 +1,19 @@
 <script>
+  import { loading } from './stores/loading';
   import FormHold from './components/FormHold.svelte';
   import Footer from './components/Footer.svelte';
+  import Loader from './components/Loader.svelte';
 </script>
 
 <main>
+
+  {#if $loading}
+    <Loader />
+  {/if}
+
   <h1>Inflation Calculator</h1>
   <p>
-    Enter an amount in contemporary US dollars, then pick a year to see how much that amount be worth in the past
+    Enter an amount in contemporary US dollars, then pick a year for comparison 
   </p>
 
   <FormHold />

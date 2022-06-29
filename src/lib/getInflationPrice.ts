@@ -8,7 +8,7 @@ type TProps = {
 };
 
 type TInflationDataRes = {
-  totalAdjustedAmount: number;
+  totalAdjustedAmount: string;
   singleUnitConverted: number;
 };
 
@@ -38,7 +38,7 @@ const getInflationPrice = async (
     let num = parseFloat(res.data.split('"')[1].split("$")[1].replace(" ", ""));
 
     return {
-      totalAdjustedAmount: Math.floor(num * amount),
+      totalAdjustedAmount: Number(Math.floor(num * amount)).toFixed(2),
       singleUnitConverted: num,
     };
   } catch (err) {
