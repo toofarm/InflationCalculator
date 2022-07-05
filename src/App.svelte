@@ -14,7 +14,7 @@
   <h1>Inflation Calculator</h1>
   
   <p>
-    Enter an amount in contemporary US dollars, then pick a year for comparison 
+    Enter an amount in contemporary currency, then pick a year for comparison 
   </p>
 
   <FormHold />
@@ -45,7 +45,6 @@
     font-weight: 100;
     line-height: 1.1;
     margin: 2rem 0;
-    max-width: 14rem;
   }
 
   p {
@@ -58,6 +57,7 @@
   @media (max-width: $tablet) {
     h1 {
       font-size: 3rem;
+      max-width: 14rem;
     }
 
     p {

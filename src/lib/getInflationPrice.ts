@@ -5,6 +5,7 @@ import { months } from "./constants";
 type TProps = {
   amount: number;
   comparisonYear: number;
+  country: string;
 };
 
 type TInflationDataRes = {
@@ -16,7 +17,7 @@ const getInflationPrice = async (
   props: TProps
 ): Promise<TInflationDataRes | null> => {
   try {
-    const { amount, comparisonYear } = props;
+    const { amount, comparisonYear, country } = props;
     const apiUrl =
       "https://www.statbureau.org/calculate-inflation-price-jsonp?jsoncallback=?";
     const end = new Date();
@@ -25,7 +26,7 @@ const getInflationPrice = async (
     const start = new Date(`${month} ${date}, ${comparisonYear}`);
     const config = {
       params: {
-        country: "united-states",
+        country,
         format: true,
         start,
         end,

@@ -15,13 +15,14 @@
         justify-content: center;
         align-items: flex-start;
         font-weight: bold;
-        font-size: 2rem;
+        font-size: 1rem;
         margin: 0 0 1rem 0;
+        color: #888;
 
         input {
             margin: 1rem 0 0 0;
             padding: 0.5rem;
-            font-size: 1.15rem;
+            font-size: 1.75rem;
             border-left: none;
             border-top: none;
             border-right: none;

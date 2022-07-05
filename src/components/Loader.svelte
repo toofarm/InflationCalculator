@@ -23,7 +23,7 @@
         background-color: rgba(255, 255, 255, 0.4);
         top: 0;
         left: 0;
-        color: $color-secondary;
+        color: #666;
         font-size: 6rem;
         pointer-events: none;
     }
