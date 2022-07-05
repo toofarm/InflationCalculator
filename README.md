@@ -1,4 +1,4 @@
-# Inflation Calculator
+# 💰 Inflation Calculator
 
 A small app that allows users to calculate inflation over time. Bootstrapped with Svelte and Vite
 
