@@ -1,11 +1,34 @@
 @import "./constants";
 
-@mixin inlineLink() {
+@mixin inlineLink($color: $color-link) {
   font-size: inherit;
-  color: $color-link;
+  color: $color;
   text-decoration: none;
 
   &:hover {
     text-decoration: underline;
+  }
+}
+
+@mixin labelAndInput() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 0 0 1rem 0;
+  color: #888;
+
+  input,
+  select {
+    margin: 1rem 0 0 0;
+    padding: 0.5rem;
+    font-size: 1.75rem;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+    min-width: 270px;
   }
 }

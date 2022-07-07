@@ -36,6 +36,8 @@ const getInflationPrice = async (
 
     const res = await axios(apiUrl, config);
 
+    console.log(res.data);
+
     let num = parseFloat(res.data.split('"')[1].split("$")[1].replace(" ", ""));
 
     return {
@@ -44,7 +46,7 @@ const getInflationPrice = async (
     };
   } catch (err) {
     console.log(err);
-    return null;
+    return err;
   }
 };
 

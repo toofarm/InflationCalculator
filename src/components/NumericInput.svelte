@@ -9,25 +9,10 @@
 </label>
 
 <style lang="scss">
-    label {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        font-weight: bold;
-        font-size: 1rem;
-        margin: 0 0 1rem 0;
-        color: #888;
+    @import '../styles/mixins';
 
-        input {
-            margin: 1rem 0 0 0;
-            padding: 0.5rem;
-            font-size: 1.75rem;
-            border-left: none;
-            border-top: none;
-            border-right: none;
-            border-bottom: 1px solid black;
-        }
+    label {
+        @include labelAndInput();
     }
 
 </style>

@@ -4,13 +4,14 @@
     import NumericInput from "./NumericInput.svelte";
     import Button from "./Button.svelte";
     import Response from "./Response.svelte";
+    import Error from './Error.svelte';
     import makeYearslist from '../lib/makeYearsList';
     import getInflationPrice from "../lib/getInflationPrice";
     import { fade } from 'svelte/transition';
-    import { each } from 'svelte/internal';
 
     let val = 0;
     let selection:number;
+    let error = false;
     let country = 'united-states';
     let result;
     const years = makeYearslist();
@@ -20,11 +21,17 @@
     const handleSubmit = async () => {
         loading.set(true)
 
-        result = await getInflationPrice({ 
-            amount: val,
-            comparisonYear: selection,
-            country
-        })
+        try {
+            result = await getInflationPrice({ 
+                amount: val,
+                comparisonYear: selection,
+                country
+            })
+            error = false
+        } catch (err) {
+            console.log('hitting error block')
+            error = true
+        }
 
         loading.set(false)
 
@@ -84,38 +91,25 @@
             total={result.totalAdjustedAmount}
             date={selection} />
     {/if}
+
+    {#if error}
+        <Error />
+    {/if}
 </div>
 
 <style lang="scss">
+    @import '../styles/mixins';
     .hold {
         display: flex;
         flex-direction: column;
         max-width: 1170px;
         margin: 3rem auto;
         
-        label {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            font-weight: bold;
-            font-size: 1rem;
-            margin: 0 0 1rem 0;
-            color: #888;
-
-            select {
-                margin: 1rem 0 0 0;
-                padding: 0.5rem;
-                font-size: 1.75rem;
-                min-width: 8rem;
-                border-left: none;
-                border-top: none;
-                border-right: none;
-                border-bottom: 1px solid black;
-                min-width: 207px;
-            }
-        }
     }
+
+    label {
+            @include labelAndInput();
+        }
 
     .input_wrap {
         margin: 1.5rem 0;
